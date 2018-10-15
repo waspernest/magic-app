@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+
+        <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="../js/script.js"></script>
+
+		<style type="text/css">
+			body {
+				background: #000;
+			}
+
+			.home-header { text-align: center; color: #fff; }
+			.nav-div { padding: 30px 0px }
+			.nav-div a { width: 80%; display: block; margin-left: auto; margin-right: auto; padding: 15px 0px; }
+            .first_page_icon { width: 80%; margin: 0px 5px; display: block; margin-left: auto; margin-right: auto; }
+            .page-bullets { width: 15%; display: block; margin-left: auto; margin-right: auto; }
+            .icon_row { margin: 40px 0px; }
+            .icon_row span { text-align: center; display: block; font-size: 11px; }
+		</style>
+
+    </head>
+<body>
+
+<div data-role="page" id="buenosaires" class="demo-page" data-title="Buenos Aires" data-dom-cache="true" data-theme="b" data-prev="newyork">
+
+	<div role="main" class="ui-content">
+
+        <div class="first_page_content_wrapper">
+            <div class="ui-grid-c icon_row">
+                <div class="ui-block-a">
+                    <img class="first_page_icon" src="images/settings.png"><br />
+                    <span>Settings</span>
+                </div>
+                <div class="ui-block-b">
+                    <img class="first_page_icon" src="images/g_map.png"><br />
+                    <span>Google Map</span>
+                </div>
+                <div class="ui-block-c">
+                    <img class="first_page_icon" src="images/chrome.png"><br />
+                    <span>Chrome</span>
+                </div>
+                <div class="ui-block-d">
+                    <img class="first_page_icon" src="images/games.png"><br />
+                    <span>Games</span>
+                </div>
+            </div>
+
+            <div class="ui-grid-c icon_row">
+                <div class="ui-block-a">
+                    <img class="first_page_icon" src="images/calendar.png"><br />
+                    <span>Calendar</span>
+                </div>
+                <div class="ui-block-b">
+                	<a href="notepad.html" data-ajax="false" style="color: #fff;text-decoration: none;">
+	                    <img class="first_page_icon" src="images/notepad.png"><br />
+	                    <span>Notepad</span>
+                    </a>
+                </div>
+                <img class="page-bullets" src="images/page-1-active.png" style="clear: both;" />
+            </div>
+        </div>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

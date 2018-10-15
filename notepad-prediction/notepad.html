@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+
+        <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="../js/script.js"></script>
+
+		<style type="text/css">
+			body {
+				background-image: url('images/notepad-bg.jpg') !important;
+				background-size: cover;
+				background-repeat: no-repeat; 
+			}
+
+			.home-header { text-align: center; color: #ccc; margin-top: 15px; }
+			.nav-div { padding: 30px 0px }
+			.nav-div a { width: 80%; display: block; margin-left: auto; margin-right: auto; padding: 15px 0px; }
+            .text-area-wrapper #textarea { 
+                height: 438px !important;
+                background: transparent;
+                border: 1px transparent;
+                text-shadow: none;
+                margin-top: -6px;
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                line-height: 25px;
+                }
+		</style>
+
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <h1 class="home-header">Edit Note</h1>
+        <img src="images/back.png" id="discardText" style="width: 7%;position: absolute;left: 3%;top: 5%;">
+        <img src="images/check.png" style="width: 7%;position: absolute;right: 3%;top: 5%;">
+        <div class="text-area-wrapper">
+            <textarea name="textarea-1" id="textarea"></textarea>
+        </div>
+    <script>
+        $( document ).on( "pageshow", function() {
+            //localStorage.setItem("hiddenTtext", $("#textarea").val());
+            //console.log(localStorage.getItem("hiddenTtext"));
+
+            $("#discardText").on("click",function(){
+                //console.log($("#textarea").val());
+                if (!$("#textarea").val()) {
+                    //console.log("empty");
+                    window.location.href = 'buenosaires.html';
+                } else { //if (!$("#textarea").val()) {
+                    //console.log("not empty");
+                    if (confirm('Are you sure to discard this note?')) {
+                        //call save function
+                        localStorage.setItem("hiddenTtext", $("#textarea").val());
+
+                        window.location.href = 'buenosaires.html';
+                    }
+                }
+            });
+
+        });        
+    </script>
+    </body>
+</html>

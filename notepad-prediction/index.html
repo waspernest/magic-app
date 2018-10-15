@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+
+        <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="../js/script.js"></script>
+
+		<style type="text/css">
+			body {
+				background-image: url('../images/bg-1.jpg') !important;
+				background-size: cover;
+				background-repeat: no-repeat; 
+			}
+
+			.home-header { text-align: center; color: #fff; }
+			.nav-div { padding: 30px 0px }
+			.nav-div a { width: 80%; display: block; margin-left: auto; margin-right: auto; padding: 15px 0px; }
+		</style>
+
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <h1 class="home-header">Notepad Prediction Trick</h1>
+
+        <div class="nav-div">
+        	<a href="newyork.html" data-ajax="false" class="ui-btn ui-corner-all">Start</a>
+            <a href="#" class="ui-btn ui-corner-all">Last Word : <span class="last-hidden-text"></span></a>
+            <a href="#" id="resetWord" class="ui-btn ui-corner-all">Reset Word</a>
+        	<a href="../index.html" class="ui-btn ui-corner-all">Back</a>
+        </div>
+
+    <script>
+        $( document ).on( "pageshow", function() {
+            //localStorage.setItem("hiddenTtext", $("#textarea").val());
+            var last_text = localStorage.getItem("hiddenTtext");
+            $('.last-hidden-text').html(last_text);
+
+            $("#resetWord").on("click",function(){                
+                localStorage.setItem("hiddenTtext", "");
+                alert("Last word has been reset!");
+                setTimeout(function(){
+                    $('.last-hidden-text').html("");
+                },500);
+            });
+        });        
+    </script>
+
+    </body>
+</html>
